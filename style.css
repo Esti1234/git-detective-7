@@ -82,6 +82,13 @@ li input[type="checkbox"] {
   cursor: pointer;
 }
 
+.counter {
+  margin: 16px 0 0;
+  color: #555555;
+  font-size: 14px;
+  text-align: center;
+}
+
 li.done span {
   text-decoration: line-through;
   color: #999999;
