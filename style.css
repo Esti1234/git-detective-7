@@ -86,3 +86,25 @@ li.done span {
   text-decoration: line-through;
   color: #999999;
 }
+
+.filters {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.filters button {
+  flex: 1;
+  padding: 8px;
+  font-size: 14px;
+  background: #eef2f7;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.filters button.selected {
+  background: #3b82f6;
+  border-color: #3b82f6;
+  color: #ffffff;
+}
