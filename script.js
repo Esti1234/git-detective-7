@@ -1,6 +1,5 @@
-// My Tasks - a very simple task list
 
-// Show the tasks as soon as the script loads
+ // My Tasks - a very simple task list
 
 // The list of tasks. Each task has a text and a "done" flag.
 const tasks = [
@@ -11,8 +10,9 @@ const tasks = [
   { text: "Read a book", done: false },
 ];
 
+// Get the elements from the page
+const taskList = document.getElementById("task-list");
 const taskCounter = document.getElementById("task-counter");
-renderTasks();
 const taskInput = document.getElementById("task-input");
 const addButton = document.getElementById("add-button");
 
@@ -25,11 +25,13 @@ function renderTasks() {
     message.className = "empty-message";
     message.textContent = "No tasks to show.";
     taskList.appendChild(message);
+    updateCounter();
     return;
   }
 
   for (const task of tasks) {
     const item = document.createElement("li");
+
     if (task.done) {
       item.className = "done";
     }
@@ -37,6 +39,7 @@ function renderTasks() {
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
     checkbox.checked = task.done;
+
     checkbox.addEventListener("change", function () {
       task.done = checkbox.checked;
       renderTasks();
@@ -65,6 +68,7 @@ function updateCounter() {
 // Add a new task from the text box
 function addTask() {
   const text = taskInput.value.trim();
+
   if (text === "") {
     return;
   }
@@ -75,3 +79,6 @@ function addTask() {
 }
 
 addButton.addEventListener("click", addTask);
+
+// Show the tasks as soon as the script loads
+renderTasks();
